@@ -1,0 +1,2 @@
+Sentence,spaCy Parse,Stanza Parse,Gold Standard,Error Type,Notes
+The man saw the girl with the telescope.,Run script to fill actual model output,Run script to fill actual model output,"with/telescope attached to saw as oblique instrumental in provided sample gold",Prepositional Phrase Attachment,"Ambiguous PP can attach to saw or girl; verify actual parser outputs by model version."

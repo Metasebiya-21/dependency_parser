@@ -1,0 +1,14 @@
+[theme]
+primaryColor = "#2563eb"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f1f5f9"
+textColor = "#0f172a"
+font = "sans serif"
+
+[server]
+headless = true
+# Avoid import errors when the watcher inspects transformers submodules
+fileWatcherType = "poll"
+
+[browser]
+gatherUsageStats = false

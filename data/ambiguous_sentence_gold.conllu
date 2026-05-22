@@ -1,0 +1,11 @@
+# sent_id = ambiguous-pp-001
+# text = The man saw the girl with the telescope.
+1	The	the	DET	_	_	2	det	_	_
+2	man	man	NOUN	_	_	3	nsubj	_	_
+3	saw	see	VERB	_	_	0	root	_	_
+4	the	the	DET	_	_	5	det	_	_
+5	girl	girl	NOUN	_	_	3	obj	_	_
+6	with	with	ADP	_	_	8	case	_	_
+7	the	the	DET	_	_	8	det	_	_
+8	telescope	telescope	NOUN	_	_	3	obl	_	SpaceAfter=No
+9	.	.	PUNCT	_	_	3	punct	_	_
