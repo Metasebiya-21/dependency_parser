@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.streamlit/secrets.toml
+
+# Downloaded at runtime (local or Streamlit Cloud)
+stanza_resources/
+data/en_ewt-ud-dev.conllu
+outputs/

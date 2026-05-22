@@ -7,6 +7,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 REPORT_DIR = PROJECT_ROOT / "report"
+# Stanza models (downloaded at runtime; not committed — see .gitignore)
+STANZA_DIR = PROJECT_ROOT / "stanza_resources"
 
 UD_DEV_URL = (
     "https://raw.githubusercontent.com/UniversalDependencies/UD_English-EWT/master/en_ewt-ud-dev.conllu"

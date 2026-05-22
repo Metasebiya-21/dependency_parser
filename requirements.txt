@@ -1,14 +1,22 @@
-spacy>=3.7
-stanza>=1.8
-transformers>=4.30
-torchvision>=0.20
-conllu>=4.5
-pandas>=2.0
-matplotlib>=3.8
-networkx>=3.2
-plotly>=5.18
+# Core app
 streamlit>=1.32
+pandas>=2.0
+plotly>=5.18
+conllu>=4.5
+networkx>=3.2
+
+# spaCy — model MUST be a pip package for Streamlit Cloud (no `spacy download`)
+spacy>=3.8,<3.9
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+
+# Stanza + deps (first Cloud boot downloads English models into stanza_resources/)
+stanza>=1.8,<2.0
+torch>=2.0
+transformers>=4.30,<5.0
+torchvision>=0.20
+sentencepiece>=0.2.0
+protobuf>=4.25
+
+# Optional / CLI scripts
+matplotlib>=3.8
 scikit-learn>=1.4
-# After pip install:
-#   python -m spacy download en_core_web_sm
-#   python -c "import stanza; stanza.download('en')"

@@ -13,9 +13,11 @@ It selects 50 sentences from the UD English EWT dataset, supports manual gold co
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-python -c "import stanza; stanza.download('en')"
+streamlit run app.py
 ```
+
+`requirements.txt` installs the spaCy English model as a pip package. Stanza downloads
+English models into `stanza_resources/` on first run.
 
 ## Interactive Streamlit dashboard
 
@@ -31,7 +33,17 @@ The dashboard provides:
 - UAS evaluation, disagreement charts, and error taxonomy filtering
 - Ambiguity case study for *"The man saw the girl with the telescope."*
 - CSV export for UAS and error analysis tables
-- Automatic spaCy/Stanza model download on first run
+- spaCy model via pip; Stanza models download on first run
+
+## Deploy on Streamlit Community Cloud
+
+1. Push this repo to GitHub.
+2. Go to [share.streamlit.io](https://share.streamlit.io/) → **New app**.
+3. Set **Main file path** to `app.py` and **Requirements** to `requirements.txt`.
+4. Deploy. The first load may take several minutes while Stanza downloads English models.
+5. Do **not** rely on `python -m spacy download` on Cloud — the model wheel in `requirements.txt` is required.
+
+If the app runs out of memory on the free tier, redeploy on a larger instance or remove unused heavy deps.
 
 ## Run the CLI pipeline
 

@@ -511,9 +511,22 @@ def main():
         spacy_nlp = load_spacy()
     except Exception as exc:
         st.error(f"Failed to initialize parsers: {exc}")
-        st.info(
-            "Install dependencies: `pip install -r requirements.txt` then "
-            "`python -m spacy download en_core_web_sm` and `python -c \"import stanza; stanza.download('en')\"`"
+        st.markdown(
+            """
+            **Local setup**
+            ```bash
+            pip install -r requirements.txt
+            streamlit run app.py
+            ```
+            The spaCy English model is installed from `requirements.txt` (no `spacy download` needed).
+
+            **Streamlit Community Cloud** ([share.streamlit.io](https://share.streamlit.io/))
+            - Main file: `app.py`
+            - Python: 3.10–3.12
+            - Commit `requirements.txt` with the `en-core-web-sm` wheel line (already included)
+            - First launch downloads Stanza English models (~500MB); wait 2–5 minutes
+            - Free tier needs ~1GB RAM; upgrade if the app crashes on load
+            """
         )
         return
 
