@@ -68,7 +68,7 @@ def ensure_stanza_pipeline(lang: str = "en", verbose: bool = False):
     model_dir = str(STANZA_DIR)
 
     if not _stanza_ready(lang):
-        stanza.download(lang, dir=model_dir, logging_level="WARNING")
+        stanza.download(lang, model_dir=model_dir, logging_level="WARNING")
 
     return stanza.Pipeline(
         lang,
